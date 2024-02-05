@@ -4,7 +4,7 @@ import { ReactNode, createContext, useContext, useEffect, useState } from 'react
 import { sendMessage } from './sendMessage'
 
 interface ContextProps {
-  messages: ChatCompletionMessageParam[]
+  messages: ChatCompletionMessageParam[]| any
   addMessage: (content: string) => Promise<void>
   isLoadingAnswer: boolean
 }

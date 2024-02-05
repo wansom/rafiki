@@ -16,7 +16,6 @@ import {
 } from 'firebase/firestore'
 
 const USERS_PATH = 'rafiki_users'
-const QUESTIONS_PATH = 'anonymousQuiz'
 
 export const firestoreListener = onSnapshot
 export const deleteDbField = deleteField()

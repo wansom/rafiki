@@ -202,7 +202,7 @@ const Signup: NextPage = () => {
                       <label className="flex items-center dark:text-gray-400">
                         <input
                           type="checkbox"
-                          checked
+                          defaultChecked
                           className="text-[#13A8BD] dark:text-[#13A8BD] focus:outline-none focus:shadow-outline-purple dark:focus:shadow-outline-gray"
                         />
                         <span className="ml-2">

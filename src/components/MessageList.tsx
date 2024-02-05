@@ -5,7 +5,7 @@ const MessagesList = () => {
 
   return (
     <div className="max-w-3xl mx-auto pt-8">
-      {messages?.map((message, i) => {
+      {messages?.map((message:any, i:any) => {
         const isUser = message.role === 'user'
         if (message.role === 'system') return null
         return (
@@ -14,7 +14,7 @@ const MessagesList = () => {
             className={`flex mb-4 fade-up ${isUser ? 'justify-end' : 'justify-start'} ${
               i === 1 ? 'max-w-md' : ''
             }`}
-            key={message.content}
+            key={i}
           >
             {!isUser && (
               <img
@@ -31,7 +31,7 @@ const MessagesList = () => {
                   : 'ml-2 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200'
               }`}
             >
-              {message.content.trim()}
+              {message.content?.trim()}
             </div>
             {isUser && (
               <img
