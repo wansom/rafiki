@@ -1,4 +1,4 @@
-import { ChatCompletionMessageParam } from "openai/resources/chat";
+import { ChatCompletionMessageParam } from 'openai/resources/chat'
 
 export const sendMessage = async (messages: ChatCompletionMessageParam[]) => {
   try {

@@ -4,7 +4,6 @@ import MessagesList from 'components/MessageList'
 import { NextPage } from 'next'
 import { MessagesProvider } from 'utils/useMessages'
 
-
 const ChatPage: NextPage = () => {
   return (
     <MessagesProvider>
