@@ -27,7 +27,7 @@ const PaymentsPage: NextPage = () => {
 
   return (
     <main className="overflow-x-hidden">
-      <h1>hello World{posts[0]}</h1>
+      <h1>hello World to payment{posts[0]}</h1>
     </main>
   )
 }
