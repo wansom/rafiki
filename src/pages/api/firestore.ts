@@ -1,25 +1,15 @@
-import { auth, firestoreDb } from './firebase';
+import { firestoreDb } from './firebase';
 
 import {
-  addDoc,
-  arrayRemove,
-  arrayUnion,
   collection,
-  deleteDoc,
   deleteField,
   doc,
-  endAt,
-  getDoc,
   getDocs,
-  limit,
   onSnapshot,
-  orderBy,
+
   query,
   setDoc,
-  startAfter,
-  startAt,
   updateDoc,
-  where,
   DocumentData,
   DocumentReference,
   DocumentSnapshot,

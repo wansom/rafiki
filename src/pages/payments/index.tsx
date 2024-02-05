@@ -2,8 +2,6 @@
 'use client'
 import { NextPage } from "next"
 import { useEffect, useState } from "react";
-import Navbar from 'components/Navbar'
-import Link from "next/link";
 
 const PaymentsPage: NextPage = () => {
   const [posts, setPosts] = useState<any[]>([]);
