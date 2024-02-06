@@ -4,7 +4,7 @@ const MessagesList = () => {
   const { messages, isLoadingAnswer } = useMessages()
 
   return (
-    <div className="max-w-3xl mx-auto pt-8">
+    <div className="max-w-3xl mx-auto pt-8 overflow-y-scroll h-[200px] md:h-[320px]">
       {messages?.map((message:any, i:any) => {
         const isUser = message.role === 'user'
         if (message.role === 'system') return null
@@ -18,7 +18,7 @@ const MessagesList = () => {
           >
             {!isUser && (
               <img
-                src="https://www.teamsmart.ai/next-assets/team/ai.jpg"
+                src="/img/avatar_1.jpg"
                 className="w-9 h-9 rounded-full"
                 alt="avatar"
               />
@@ -46,7 +46,7 @@ const MessagesList = () => {
       {isLoadingAnswer && (
         <div className="flex justify-start mb-4">
           <img
-            src="https://www.teamsmart.ai/next-assets/team/ai.jpg"
+            src="/img/avatar_1.jpg"
             className="w-9 h-9 rounded-full"
             alt="avatar"
           />

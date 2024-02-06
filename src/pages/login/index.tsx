@@ -52,18 +52,6 @@ const LoginPage: NextPage = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     return emailRegex.test(email)
   }
-  const handleClick = (amount: number, email: string) => {
-    initiatePayment(amount, email)
-      .then((paystackResponse) => {
-        console.log('Payment initiated successfully:', paystackResponse)
-        router.push(paystackResponse.data.authorization_url)
-
-        // Redirect the user to paystackResponse.data.authorization_url to complete the payment
-      })
-      .catch((error) => {
-        console.error('Failed to initiate payment:', error)
-      })
-  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -184,7 +172,7 @@ const LoginPage: NextPage = () => {
                       type="submit"
                       className=" flex items-center justify-center gap-2 w-full px-4 py-2 mt-4 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#01382E] border border-transparent rounded-lg active:bg-[#01382E] hover:bg-[#13A8BD] focus:outline-none focus:shadow-outline-purple"
                     >
-                      Create account
+                      Login
                       {loading && <ButtonLoader />}
                     </button>
                   </form>
@@ -193,9 +181,9 @@ const LoginPage: NextPage = () => {
                   <p className="mt-4">
                     <a
                       className="text-sm font-medium text-[#13A8BD] dark:text-[#13A8BD] hover:underline"
-                      href="/login"
+                      href="/register"
                     >
-                      Already have an account? Login
+                      Don't have an account? Register
                     </a>
                   </p>
                 </div>
