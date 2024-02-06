@@ -46,7 +46,7 @@ const Navbar = () => {
             Speak To Our Team
           </button>
           <button className=" flex items-center justify-center gap-2  px-4 py-2 text-sm font-medium leading-5 text-center text-[#01382E] transition-colors duration-150 border-[#01382E]  border-solid border-2 rounded-lg active:bg-[#01382E] hover:bg-[#01382E] hover:text-white focus:outline-none focus:shadow-outline-purple mx-3"  onClick={() => {
-              router.push('register')
+              router.push('chat')
             }}>
             TRY RAFIKI FOR FREE
             <svg
