@@ -7,8 +7,7 @@ import { useRouter } from 'next/navigation'
 import { NextPage } from 'next'
 import Navbar from 'components/Navbar'
 import ButtonLoader from 'components/ButtonLoader'
-import { createUser, signIn } from 'pages/api/auth'
-import { createNewUser } from 'pages/api/firestore'
+import { signIn } from 'pages/api/auth'
 import { initiatePayment } from 'pages/api/makePayment'
 
 interface FormData {

@@ -10,9 +10,9 @@ type Props = {
 
 const Layout = ({
   children,
-  title = 'Apideck - Next Starter Kit',
-  description = 'A Next.js starter kit with TypeScript, Tailwind, Jest, Prettier, and Eslint',
-  favicon = '/img/logo.png'
+  title = 'Rafikihealth',
+  description = 'Your personal wellness Assistant',
+  favicon = '/img/logo-1.png'
 }: Props) => (
   <div className="font-basier-circle">
     <Head>
