@@ -215,11 +215,6 @@ body.nav-active { overflow: hidden; }
 
 
 /* == HEADER == */
-nav {
-  height: 100px;
-  width: 100%;
-  background-color: var(--transparent);
-}
 
 .nav-container {
   height: 100%;
@@ -251,12 +246,6 @@ nav {
   color: var(--blue);
 }
 
-.nav-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
 
 
 .menu-bar {

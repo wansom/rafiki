@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="flex  items-center justify-center container-fluid mx-auto px-5 border-b-[1px] border-solid border-black">
         <div className="nav logo">
           <a href="/" className="nav-logo">
-            <Image src="/img/logo.png" alt="logo" width={120} height={80} />
+            <Image src="/img/logo-1.png" alt="logo" width={80} height={80} />
           </a>
         </div>
         <div className={isOpen ? 'active links' : 'hide links'} id="links">
@@ -45,7 +45,9 @@ const Navbar = () => {
           >
             Speak To Our Team
           </button>
-          <button className=" flex items-center justify-center gap-2  px-4 py-2 text-sm font-medium leading-5 text-center text-[#01382E] transition-colors duration-150 border-[#01382E]  border-solid border-2 rounded-lg active:bg-[#01382E] hover:bg-[#01382E] hover:text-white focus:outline-none focus:shadow-outline-purple mx-3">
+          <button className=" flex items-center justify-center gap-2  px-4 py-2 text-sm font-medium leading-5 text-center text-[#01382E] transition-colors duration-150 border-[#01382E]  border-solid border-2 rounded-lg active:bg-[#01382E] hover:bg-[#01382E] hover:text-white focus:outline-none focus:shadow-outline-purple mx-3"  onClick={() => {
+              router.push('register')
+            }}>
             CREATE ACCOUNT
             <svg
               xmlns="http://www.w3.org/2000/svg"

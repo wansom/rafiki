@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation'
 import { NextPage } from 'next'
 import Navbar from 'components/Navbar'
 import ButtonLoader from 'components/ButtonLoader'
-import { createUser, signIn } from 'pages/api/auth'
+import { createUser } from 'pages/api/auth'
 import { createNewUser } from 'pages/api/firestore'
 import { initiatePayment } from 'pages/api/makePayment'
 
@@ -15,26 +15,32 @@ interface FormData {
   company: string
   email: string
   password: string
+  profileUpdate: string
+  profileStage: string
   messages: any[] // Adjust the type according to your messages structure
 }
 
 interface Errors {
+  company: string
   email: string
   password: string
 }
 
-const LoginPage: NextPage = () => {
+const Signup: NextPage = () => {
   const router = useRouter()
   const [formData, setFormData] = useState<FormData>({
     company: '',
     email: '',
     password: '',
+    profileUpdate: '0%',
+    profileStage: 'overview',
     messages: []
   })
 
   const [loading, setLoading] = useState(false)
 
   const [errors, setErrors] = useState<Errors>({
+    company: '',
     email: '',
     password: ''
   })
@@ -69,10 +75,16 @@ const LoginPage: NextPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
+
     // Validate form fields
     const newErrors: Errors = {
+      company: '',
       email: '',
       password: ''
+    }
+
+    if (formData.company.trim() === '') {
+      newErrors.company = 'Company name is required'
     }
 
     if (formData.email.trim() === '') {
@@ -90,23 +102,26 @@ const LoginPage: NextPage = () => {
       setLoading(false)
       return
     }
-    await signIn(formData).then(()=>{
-      setLoading(false)
-      router.push('/chat');
 
-    }).catch((err)=>{
+    try {
+      const user = await createUser(formData)
+      const payload = {
+        uid: user.uid,
+        data: formData
+      }
+      await createNewUser(payload, () => {
+        handleClick(100, formData.email)
+      })
+      setLoading(false)
+      toast.success('🦄 Account Created Successfully!', {
+        // Toast configuration
+      })
+    } catch (err: any) {
       setLoading(false)
       toast.error(` 🦄 ${err.message} !`, {
-        position: "top-right",
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        })
-    })
+        // Toast configuration
+      })
+    }
   }
   return (
     <main>
@@ -137,6 +152,21 @@ const LoginPage: NextPage = () => {
                   </h1>
 
                   <form onSubmit={handleSubmit}>
+                    <label className="block text-sm">
+                      <span className="text-gray-700 dark:text-gray-400">Your Name</span>
+                      <input
+                        className={`block w-full mt-1 text-sm dark:border-gray-600 dark:bg-gray-700 focus:border-purple-400 focus:outline-none focus:shadow-outline-purple dark:text-gray-300 dark:focus:shadow-outline-gray form-input ${
+                          errors.company && 'border-red-500'
+                        }`}
+                        placeholder="Danstun Vincent"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
+                      />
+                      {errors.company && (
+                        <p className="text-red-500 text-xs mt-1">{errors.company}</p>
+                      )}
+                    </label>
                     <label className="block mt-4 text-sm">
                       <span className="text-gray-700 dark:text-gray-400">Email</span>
                       <input
@@ -209,4 +239,4 @@ const LoginPage: NextPage = () => {
   )
 }
 
-export default LoginPage
+export default Signup
