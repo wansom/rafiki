@@ -105,7 +105,7 @@ const IndexPage: NextPage = () => {
                 measurable and long-lasting results. We give you a clear roadmap for change. This is
                 effective mental health care for real-life schedules
               </p>
-              <a href="login" className="flex items-center">
+              <a href="/register" className="flex items-center">
                 Sign Up{' '}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -130,7 +130,7 @@ const IndexPage: NextPage = () => {
                 AI does not have all the answers,that’s why our licensed therapists are available
                 via both scheduled face-to-face video sessions and unlimited in-app chat.{' '}
               </p>
-              <a href="login" className="flex items-center">
+              <a href="/register" className="flex items-center">
                 Sign Up{' '}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -507,7 +507,7 @@ const IndexPage: NextPage = () => {
           </div>
         </div>
       </section>
-      <section className="py-12 my-10 bg-[#FAF7F1] " id="speakers-id">
+      <section className="py-12 my-10 bg-[#FAF7F1] " id="care">
         <div className="container mx-auto px-5 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-5  ">
           <div className="space-y-5">
             <div>
@@ -538,7 +538,7 @@ const IndexPage: NextPage = () => {
                 <span className="text-gray-500 dark:text-gray-400">/month</span>
               </div>
               <Link
-                href="/login"
+                href="/register"
                 className=" uppercase flex items-center justify-center gap-2  px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#13A8BD] border border-transparent rounded-lg active:bg-[#13A8BD] hover:bg-[#01382E] focus:outline-none focus:shadow-outline-purple"
               >
                 GET STARTED NOW
