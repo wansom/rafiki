@@ -46,8 +46,6 @@ const LoginPage: NextPage = () => {
   }
 
   const isValidEmail = (email: string): boolean => {
-    // You need to implement or import your email validation logic
-    // For example, a simple check for demonstration purposes:
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     return emailRegex.test(email)
   }

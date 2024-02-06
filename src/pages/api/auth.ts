@@ -5,8 +5,10 @@ import {
   signOut,
   sendPasswordResetEmail,
   updatePassword,
-  User
+  User,
+  signInAnonymously
 } from 'firebase/auth'
+import { createAnonUserRecord } from './firestore';
 
 export const createUser = async (values: { email: string; password: string }): Promise<User> => {
   try {
@@ -62,3 +64,13 @@ export const changePassword = async (newPassword: string): Promise<void> => {
 export const currentUser = (): boolean => {
   return !!auth.currentUser
 }
+
+export const signUserInAnonymously = async () => {
+  try {
+    const userCredential = await signInAnonymously(auth);
+    const user = userCredential.user;
+    createAnonUserRecord(user.uid)   
+  } catch (error) {
+    console.error('Error signing in anonymously:', error);
+  }
+};

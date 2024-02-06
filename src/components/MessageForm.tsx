@@ -1,8 +1,12 @@
 import { Button } from '@apideck/components'
+import { incrementMessageCount } from 'pages/api/firestore'
 import { useState } from 'react'
 import { useMessages } from 'utils/useMessages'
+interface MessageFormProps {
+  uid: string;
+}
 
-const MessageForm = () => {
+const MessageForm: React.FC<MessageFormProps> = ({uid}) => {
   const [content, setContent] = useState('')
   const { addMessage } = useMessages()
 
@@ -10,6 +14,7 @@ const MessageForm = () => {
     e?.preventDefault()
     addMessage(content)
     setContent('')
+    incrementMessageCount(uid)
   }
 
   return (
