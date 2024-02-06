@@ -8,7 +8,6 @@ import { NextPage } from 'next'
 import Navbar from 'components/Navbar'
 import ButtonLoader from 'components/ButtonLoader'
 import { signIn } from 'pages/api/auth'
-import { initiatePayment } from 'pages/api/makePayment'
 
 interface FormData {
   company: string
