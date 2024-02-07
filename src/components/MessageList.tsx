@@ -4,7 +4,7 @@ const MessagesList = () => {
   const { messages, isLoadingAnswer } = useMessages()
 
   return (
-    <div className="max-w-3xl mx-auto pt-8 overflow-y-scroll h-[200px] md:h-[320px]">
+    <div className="max-w-3xl mx-auto pt-8 overflow-y-scroll h-[200px] md:h-[80%]">
       {messages?.map((message:any, i:any) => {
         const isUser = message.role === 'user'
         if (message.role === 'system') return null
