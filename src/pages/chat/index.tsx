@@ -28,9 +28,7 @@ const ChatPage: NextPage = () => {
         // Watch for changes in the user's messages count
         const unsubscribeMessages = watchUserMessages(uid, (count) => {
           setMessagesCount(count);
-          // Redirect to upgrade page if messages count exceeds 4
           if (count > 3) {
-            // router.push('/register');
 Swal.fire({
   imageUrl: "/pro.png",
   title: "Upgrade Account",
@@ -49,7 +47,7 @@ Swal.fire({
         };
       }else if(user && user.email){
         Swal.fire({
-          imageUrl: "/pro.png",
+          imageUrl: "/sub.png",
           title: `WELCOME BACK ${user.email}`,
           text:"Welcome to your personalized mental wellness journey. Think of me as your AI companion, offering a listening ear, insightful exercises, and handy resources tailored to your needs. We can explore self-awareness, relaxation techniques, and even connect you with a supportive community. For serious concerns or diagnosis, please reach out to a qualified professional.",
           showCancelButton: false,

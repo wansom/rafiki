@@ -8,7 +8,7 @@ interface PaystackResponse {
 }
 
 export async function initiatePayment(amount: number, email: string): Promise<PaystackResponse> {
-  const paystackSecretKey = 'sk_test_89a2c06baca4c2ddb344faf31249266d56a52ef9'
+  const paystackSecretKey = 'sk_live_c57cbcda87689469c80f647cc96096a85b0ac78a'
 
   try {
     const response = await fetch('https://api.paystack.co/transaction/initialize', {
@@ -19,7 +19,7 @@ export async function initiatePayment(amount: number, email: string): Promise<Pa
       },
       body: JSON.stringify({
         email,
-        amount: amount * 100 // Paystack expects amount in kobo (1 Naira = 100 kobo)
+        amount: amount * 100 
       })
     })
 

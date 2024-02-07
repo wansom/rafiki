@@ -8,7 +8,7 @@ const IndexPage: NextPage = () => {
   return (
     <main className="overflow-x-hidden">
       <Navbar />
-      <section className="banner flex flex-col md:flex-row bg-[#FAF7F1]">
+      <section className="banner flex flex-col md:flex-row items-center bg-[#FAF7F1]">
         <div className="banner-container basis-2/2 md:basis=1/3">
           <div className="bn-text mt-10">
             <div className="bn-txt-holder">
