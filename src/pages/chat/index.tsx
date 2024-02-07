@@ -32,7 +32,7 @@ const ChatPage: NextPage = () => {
 Swal.fire({
   imageUrl: "/pro.png",
   title: "Upgrade Account",
-  text:"You've used your 5 free messages! I've enjoyed getting to know you and hope I've been helpful so far. To unlock deeper support, personalized guidance, consider subscribing for just $15/month.",
+  text:"You've used your 5 free messages! I've enjoyed getting to know you and hope I've been helpful so far. To unlock deeper support, personalized guidance, subscribe for just $15/month.",
   showCancelButton: false,
   confirmButtonText: "Proceed to Account",
   showLoaderOnConfirm: true,
