@@ -78,9 +78,9 @@ const LoginPage: NextPage = () => {
       setLoading(false)
       router.push('/chat');
 
-    }).catch((err)=>{
+    }).catch(()=>{
       setLoading(false)
-      toast.error(` 🦄 ${err.message} !`, {
+      toast.error(` 🦄 Something went wrong, please try again`, {
         position: "top-right",
         autoClose: 2000,
         hideProgressBar: false,

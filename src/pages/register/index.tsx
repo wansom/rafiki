@@ -118,7 +118,7 @@ const Signup: NextPage = () => {
       })
     } catch (err: any) {
       setLoading(false)
-      toast.error(` 🦄 ${err.message} !`, {
+      toast.error(` 🦄 something went wrong.check email and try again!`, {
         // Toast configuration
       })
     }
