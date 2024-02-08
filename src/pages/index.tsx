@@ -16,8 +16,8 @@ const IndexPage: NextPage = () => {
                 We are shaping the future of mental health
               </h1>
               <p className="mx-5 md:mx-20 my-5 text-black">
-                By making mental health accessible, we are shaping a future where young people,
-                everywhere, can thrive.
+                By making mental health accessible, we are shaping a future where everyone,
+                everywhere, can thrive with a personal wellness Assistant
               </p>
               <div className="flex flex-col md:flex-row items-center gap-5 md:ml-20 mb-4">
                 <Link
