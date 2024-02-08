@@ -69,7 +69,6 @@ Swal.fire({
     <MessagesProvider>
       <Layout>
         <Navbar/>
-        <div>{messagesCount}</div>
         <div className='h-screen'>
         <MessagesList />
         </div>
