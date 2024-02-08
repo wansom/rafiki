@@ -110,7 +110,7 @@ const Signup: NextPage = () => {
         data: formData
       }
       await createNewUser(payload, () => {
-        handleClick(2500, formData.email)
+        handleClick(20, formData.email)
       })
       setLoading(false)
       toast.success('🦄 Account Created Successfully!', {
