@@ -36,7 +36,7 @@ const Navbar = () => {
           <a href="/#about-id">Home</a>
           <a href="/#about-id">About Rafiki</a>
           <a href="/#care">Our Care Program</a>
-          <a href="/blog">Resources</a>
+          <a href="https://www.linkedin.com/company/rafikiai-app/">Resources</a>
           <button
             onClick={() => {
               router.push('https://calendly.com/culturelyft/culturelyft-demo-clone')

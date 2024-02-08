@@ -2,6 +2,7 @@
 import { NextPage } from 'next'
 import Navbar from 'components/Navbar'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const IndexPage: NextPage = () => {
 
@@ -17,7 +18,7 @@ const IndexPage: NextPage = () => {
               </h1>
               <p className="mx-5 md:mx-20 my-5 text-black">
                 By making mental health accessible, we are shaping a future where everyone,
-                everywhere, can thrive with a personal wellness Assistant
+                everywhere, can thrive with a personal AI wellness Assistant
               </p>
               <div className="flex flex-col md:flex-row items-center gap-5 md:ml-20 mb-4">
                 <Link
@@ -77,7 +78,7 @@ const IndexPage: NextPage = () => {
               </h1>
               <p className="z-10 mb-2">
                 Mental health doesn’t wait for the calendar—neither should your mental health care.
-                That’s why Rafiki is available to give you all round support{' '}
+                That’s why Rafiki AI assistant is available to give you all round support{' '}
               </p>
               <a href="/chat" className="flex items-center">
                 Try For Free{' '}
@@ -532,9 +533,9 @@ const IndexPage: NextPage = () => {
                 assistant—equal to 25 to 30 in-person therapy visits.
               </p>
             </div>
-            <div className="flex items-baseline justify-between">
+            <div className="flex items-baseline justify-start gap-10">
               <div className="flex justify-center items-baseline my-8">
-                <span className="mr-2 text-5xl font-extrabold">$35</span>
+                <span className="mr-2 text-5xl font-extrabold">$20</span>
                 <span className="text-gray-500 dark:text-gray-400">/month</span>
               </div>
               <Link
@@ -564,6 +565,17 @@ const IndexPage: NextPage = () => {
       </section>
       <footer>
         <div className="footer-container container">
+         <div className='flex gap-5 justify-center jitems-center my-4'>
+         <Link href="https://www.linkedin.com/company/rafikiai-app/">
+            <Image src='/icons/linkedin.svg' height={40} width={40} alt='icon'/>
+          </Link>
+          <Link href="https://www.reddit.com/user/Rafiki_AI/?rdt=55259">
+            <Image src='/icons/reddit.svg' height={40} width={40} alt='icon'/>
+          </Link>
+          <Link href="https://www.linkedin.com/company/rafikiai-app/">
+            <Image src='/icons/instagram.svg' height={40} width={40} alt='icon'/>
+          </Link>
+         </div>
           <p className="text-center font-bold">
             © {new Date().getFullYear()}All Rights Reserved.Rafikihealth
           </p>
