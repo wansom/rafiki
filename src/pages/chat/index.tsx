@@ -12,10 +12,15 @@ import { watchUserMessages } from 'pages/api/firestore'
 import { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import { MessagesProvider } from 'utils/useMessages'
+import { hotjar } from 'react-hotjar'
+
 
 const ChatPage: NextPage = () => {
   const router = useRouter();
   const [user,setUser]=useState<string>('')
+  useEffect(() => {
+    hotjar.initialize(3862936, 6)
+  }, [])
 
   useEffect(() => {
     const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
