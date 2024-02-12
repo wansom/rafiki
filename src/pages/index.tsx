@@ -1,11 +1,16 @@
 
+'use client'
 import { NextPage } from 'next'
 import Navbar from 'components/Navbar'
 import Link from 'next/link'
 import Image from 'next/image'
+import { hotjar } from 'react-hotjar'
+import { useEffect } from 'react'
 
 const IndexPage: NextPage = () => {
-
+  useEffect(() => {
+    hotjar.initialize(3862936, 6)
+  }, [])
   return (
     <main className="overflow-x-hidden">
       <Navbar />
