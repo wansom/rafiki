@@ -15,7 +15,6 @@ import { MessagesProvider } from 'utils/useMessages'
 
 const ChatPage: NextPage = () => {
   const router = useRouter();
-  const [messagesCount, setMessagesCount] = useState<number>(0);
   const [user,setUser]=useState<string>('')
 
   useEffect(() => {
@@ -27,7 +26,6 @@ const ChatPage: NextPage = () => {
         setUser(uid)
         // Watch for changes in the user's messages count
         const unsubscribeMessages = watchUserMessages(uid, (count) => {
-          setMessagesCount(count);
           if (count > 3) {
 Swal.fire({
   imageUrl: "/pro.png",
