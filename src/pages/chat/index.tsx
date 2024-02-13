@@ -12,11 +12,15 @@ import { watchUserMessages } from 'pages/api/firestore'
 import { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import { MessagesProvider } from 'utils/useMessages'
+import { hotjar } from 'react-hotjar'
+
 
 const ChatPage: NextPage = () => {
   const router = useRouter();
-  const [messagesCount, setMessagesCount] = useState<number>(0);
   const [user,setUser]=useState<string>('')
+  useEffect(() => {
+    hotjar.initialize(3862936, 6)
+  }, [])
 
   useEffect(() => {
     const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
@@ -27,12 +31,11 @@ const ChatPage: NextPage = () => {
         setUser(uid)
         // Watch for changes in the user's messages count
         const unsubscribeMessages = watchUserMessages(uid, (count) => {
-          setMessagesCount(count);
           if (count > 3) {
 Swal.fire({
   imageUrl: "/pro.png",
   title: "Upgrade Account",
-  text:"You've used your 5 free messages! I've enjoyed getting to know you and hope I've been helpful so far. To unlock deeper support, personalized guidance, subscribe for just $15/month.",
+  text:"You've used your 5 free messages! I've enjoyed getting to know you and hope I've been helpful so far. To unlock deeper support, personalized guidance, subscribe for just $20/month.",
   showCancelButton: false,
   confirmButtonText: "Proceed to Account",
   showLoaderOnConfirm: true,
