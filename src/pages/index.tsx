@@ -9,7 +9,7 @@ const IndexPage: NextPage = () => {
   return (
     <main className="overflow-x-hidden">
       <Navbar />
-      <section className="banner flex flex-col md:flex-row items-center bg-[#FAF7F1]">
+      <section className="banner flex flex-col md:flex-row items-center bg-white">
         <div className="banner-container basis-2/2 md:basis=1/3">
           <div className="bn-text mt-10">
             <div className="bn-txt-holder">
@@ -46,8 +46,8 @@ const IndexPage: NextPage = () => {
           </div>
           <div className=""></div>
         </div>
-        <div className="basis-1/3 md:basis-2/3 mt-3">
-          <img src="/img/hero.webp" className="w-full object-cover lg:h-[608px]"></img>
+        <div className="basis-1/3 md:basis-2/3">
+          <img src="/hero.png" className="w-full object-cover lg:h-[608px]"></img>
         </div>
       </section>
       <section className="about" id="about-id">
@@ -534,10 +534,10 @@ const IndexPage: NextPage = () => {
               </p>
             </div>
             <div className="flex items-baseline justify-start gap-10">
-              <div className="flex justify-center items-baseline my-8">
+              {/* <div className="flex justify-center items-baseline my-8">
                 <span className="mr-2 text-5xl font-extrabold">$20</span>
                 <span className="text-gray-500 dark:text-gray-400">/month</span>
-              </div>
+              </div> */}
               <Link
                 href="/register"
                 className=" uppercase flex items-center justify-center gap-2  px-4 py-2 text-sm font-medium leading-5 text-center text-white transition-colors duration-150 bg-[#13A8BD] border border-transparent rounded-lg active:bg-[#13A8BD] hover:bg-[#01382E] focus:outline-none focus:shadow-outline-purple"
@@ -564,8 +564,8 @@ const IndexPage: NextPage = () => {
         </div>
       </section>
       <footer>
-        <div className="footer-container container">
-         <div className='flex gap-5 justify-center jitems-center my-4'>
+        <div className="footer-container container mx-auto">
+         {/* <div className='flex gap-5 justify-center jitems-center my-4'>
          <Link href="https://www.linkedin.com/company/rafikiai-app/">
             <Image src='/icons/linkedin.svg' height={40} width={40} alt='icon'/>
           </Link>
@@ -575,7 +575,7 @@ const IndexPage: NextPage = () => {
           <Link href="https://www.linkedin.com/company/rafikiai-app/">
             <Image src='/icons/instagram.svg' height={40} width={40} alt='icon'/>
           </Link>
-         </div>
+         </div> */}
           <p className="text-center font-bold">
             © {new Date().getFullYear()}All Rights Reserved.Rafikihealth
           </p>
