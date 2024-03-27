@@ -1,5 +1,4 @@
 import { Button } from '@apideck/components'
-import { incrementMessageCount } from 'pages/api/firestore'
 import { useState } from 'react'
 import { useMessages } from 'utils/useMessages'
 interface MessageFormProps {
