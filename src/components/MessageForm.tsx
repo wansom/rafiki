@@ -14,7 +14,6 @@ const MessageForm: React.FC<MessageFormProps> = ({uid}) => {
     e?.preventDefault()
     addMessage(content)
     setContent('')
-    incrementMessageCount(uid)
   }
 
   return (

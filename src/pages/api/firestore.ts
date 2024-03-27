@@ -91,7 +91,6 @@ export const createAnonUserRecord = async (uid: string) => {
 
 export const incrementMessageCount = async (uid: string) => {
   const userRef = doc(firestoreDb, USERS_PATH, uid);
-
   try {
     await updateDoc(userRef, {
       messagesCount: increment(1),
