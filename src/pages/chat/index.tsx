@@ -25,7 +25,7 @@ const ChatPage: NextPage = () => {
         setUser(uid)
         // Watch for changes in the user's messages count
         const unsubscribeMessages = watchUserMessages(uid, (count) => {
-          if (count > 4) {
+          if (count > 7) {
             Swal.fire({
               imageUrl: "/pro.png",
               title: "Upgrade Account",
