@@ -5,7 +5,7 @@ interface MessageFormProps {
   uid: string;
 }
 
-const MessageForm: React.FC<MessageFormProps> = ({uid}) => {
+const MessageForm: React.FC<MessageFormProps> = () => {
   const [content, setContent] = useState('')
   const { addMessage } = useMessages()
 
